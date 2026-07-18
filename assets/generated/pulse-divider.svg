@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="70" viewBox="0 0 1000 70">
+<defs><linearGradient id="g"><stop stop-color="#120306"/><stop offset=".5" stop-color="#ff2337"/><stop offset="1" stop-color="#120306"/></linearGradient></defs>
+<style>@keyframes dash{to{stroke-dashoffset:-160}}path{animation:dash 5s linear infinite}</style>
+<path d="M20 35h370l35-20 35 40 35-40 35 20h450" fill="none" stroke="url(#g)" stroke-width="2" stroke-dasharray="80 12"/>
+<circle cx="495" cy="35" r="5" fill="#ff2337"><animate attributeName="r" values="4;9;4" dur="2s" repeatCount="indefinite"/></circle></svg>

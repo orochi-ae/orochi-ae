@@ -1,0 +1,52 @@
+name: Regenerate profile
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 3 * * *"
+  push:
+    branches: [main, master]
+    paths:
+      - "profile.config.json"
+      - "scripts/**"
+      - "assets/hero/**"
+
+permissions:
+  contents: write
+
+jobs:
+  profile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Generate owner-aware README and SVG assets
+        env:
+          PROFILE_USERNAME: ${{ github.repository_owner }}
+        run: npm run generate
+      - run: npm run check
+      - name: Commit refreshed profile
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: refresh profile visuals"
+
+  contributions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/github-contribution-grid-snake.svg?palette=github-light&color_snake=#d21f32
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark&color_snake=#ff3344
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Publish contribution animation
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          build_dir: dist
+          branch: output
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

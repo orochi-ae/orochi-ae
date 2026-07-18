@@ -1,0 +1,12 @@
+{
+  "name": "orochi-github-profile",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate": "node scripts/generate-profile.mjs",
+    "check": "node scripts/validate-profile.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

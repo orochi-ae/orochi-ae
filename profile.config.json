@@ -1,0 +1,21 @@
+{
+  "username": "YOUR_GITHUB_USERNAME",
+  "displayName": "YOUR NAME",
+  "role": "Software Engineer",
+  "tagline": "Forging resilient systems in the dark.",
+  "location": "Your location",
+  "email": "you@example.com",
+  "website": "https://github.com",
+  "tech": [
+    "typescript",
+    "javascript",
+    "react",
+    "nextjs",
+    "nodejs",
+    "python",
+    "docker",
+    "git",
+    "githubactions",
+    "postgresql"
+  ]
+}
