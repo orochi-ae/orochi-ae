@@ -1,4 +1,5 @@
 node_modules/
 .repo/
+work/
 .DS_Store
 Thumbs.db

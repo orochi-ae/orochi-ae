@@ -1,11 +1,11 @@
 {
-  "username": "YOUR_GITHUB_USERNAME",
-  "displayName": "YOUR NAME",
+  "username": "orochi-ae",
+  "displayName": "OROCHI",
   "role": "Software Engineer",
   "tagline": "Forging resilient systems in the dark.",
-  "location": "Your location",
-  "email": "you@example.com",
-  "website": "https://github.com",
+  "location": "Dubai, UAE",
+  "email": "orochi-ae@users.noreply.github.com",
+  "website": "https://github.com/orochi-ae",
   "tech": [
     "typescript",
     "javascript",
